@@ -46,14 +46,14 @@ function classNames(...classes: any) {
 export default function Sidebar(props: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const nav = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logout = () => {
     localStorage.clear();
     sessionStorage.clear();
-    dispatch(authActions.Login({ token: "" }));
-    nav("/register");
+    dispatch(authActions.Logout());
+    navigate("/register");
   };
 
   return (
